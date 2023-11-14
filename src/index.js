@@ -1,51 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Blogpages from './pages/Blogpages';
-import Contactpage from './pages/Contactpage';
-import Aboutpage from './pages/Aboutpage';
-import{
-  createHashRouter,
-  RouterProvider,
-  Route,
-}from "react-router-dom";
-import Homepage from './pages/Homepage';
+import { HashRouter } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Carousel from './components/carusel/Carousel';
+import About from './components/About';
+import Footer from './components/footer/Footer';
 
-
-
-const router = createHashRouter([
-  {
-    path:"/",
-    element:<App/>
-  },
-  {
-    path:"gallery",
-    element:<Blogpages/>
-  },
-  {
-    path:"contactpage",
-    element:<Contactpage/>
-  },
-  {
-    path:"about",
-    element:<Aboutpage/>
-  },
-  {
-    path:"Home",
-    element:<Homepage/>
-  },
-]);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
+  ReactDOM.render(
     
-  </React.StrictMode>
-);
+      <HashRouter>
+        <React.StrictMode>
+        {/* <Navbar/> */}
+        <App/>
+        {/* <Carousel/>
+        <About/>
+       <Footer/> */}
+      </React.StrictMode>
+    </HashRouter>,
+    document.getElementById('root')
+  )
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

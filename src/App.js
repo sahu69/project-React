@@ -1,27 +1,41 @@
 import React from 'react';
 import './App.css';
 import Gallery from './Gallery'
-import Navbar from './components/Navbar';
-import Footer from './components/footer/Footer';
-import Homepage from './pages/Homepage';
+
+import { Routes,Route } from 'react-router-dom';
 import Body from './components/Body';
-import Carousel from './components/carusel/Carousel';
+
 import Aboutpage from './pages/Aboutpage';
-import About from './components/About';
+
+import HomePage from './pages/Homepage';
+import Blogpage from './pages/Blogpages';
+import Contactpage from "./pages/Contactpage";
 
 function App() {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar links={[
+      {to:"/", label:"Home"},
+      {to:"/", label:"About"},
+      {to:"/", label:"Gallery"},
+      {to:"/", label:"Contact"},
+      
+    ]}/> */}
+    <Routes>
+      <Route path='/' element={<HomePage/>}></Route>
+      <Route path='/about' element={<Aboutpage/>}></Route>
+      <Route path='/gallery' element={<Blogpage/>}></Route>
+      <Route path='/contactpage' element={<Contactpage/>}></Route>
+    </Routes>
+  
     {/* <h1 style={{textAlign:'center'}}>Image Gallery</h1> */}
     
     {/* <Gallery/> */}
     
-    <Carousel/>
+   
     {/* <Body></Body> */}
     {/* <Aboutpage/> */}
-    <About/>
-    <Footer/>
+   
     </>
   );
 }
